@@ -1,0 +1,122 @@
+html,body{
+  scroll-behavior: smooth;
+}
+
+.background {
+  background-image: url('./assets/ayodhya.webp'); /* Adjust the path based on your file structure */
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.anchor a {
+  position: relative;
+  cursor: pointer;
+  color: #fff;
+  padding-bottom:  8px;
+  transition: all 0.3s ease;
+  isolation: isolate;
+}
+
+/* .anchor:hover{
+  background-color: #e82574;
+} */
+@media (width > 768px){
+  .anchor a::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    right: 0;
+    background-color: #e82574;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .anchor a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.initial{
+  visibility: visible;
+  opacity: 0;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 50, 0, 1);
+}
+
+.initialimg{
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -50, 0, 0, 1);
+}
+
+.initialli{
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 50, 0, 0, 1);
+}
+.transformation {
+   /* Enables transform-related utilities from Tailwind */
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  opacity: 1;
+  visibility: visible;
+  transition: all, opacity 1s cubic-bezier(0.5, 0, 0, 1), transform 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.trans1{
+  transition: all, opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.5s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.5s;
+}
+
+.trans2{
+  transition: all, opacity 1s cubic-bezier(0.5, 0, 0, 1) 1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 1s;
+}
+
+.trans3{
+  transition: all, opacity 1s cubic-bezier(0.5, 0, 0, 1) 1.5s, transform 1s cubic-bezier(0.5, 0, 0, 1) 1.5s;
+}
+
+.trans4{
+  transition: all, opacity 1s cubic-bezier(0.5, 0, 0, 1) 2s, transform 1s cubic-bezier(0.5, 0, 0, 1) 2s;
+}
+
+.custom-grid-template{
+  width: 100%;
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template:         
+        "1fr 1fr 1fr 1fr 1fr" 33.33vh
+        "1fr 1fr 1fr 1fr 1fr" 33.33vh
+        "1fr 1fr 1fr 1fr 1fr" 33.33vh;
+}
+
+@media (max-width:991px){
+  .custom-grid-template{
+    display: grid;
+    grid-template:         
+    "1fr 1fr 1fr" 250px
+    "1fr 1fr 1fr" 250px
+    "1fr 1fr 1fr" 250px
+    "1fr 1fr 1fr" 250px
+    "1fr 1fr 1fr" 250px;
+  }
+}
+
+@media (max-width:768px){
+  .custom-grid-template{
+    display: grid;
+    grid-template:         
+    "1fr 1fr" 200px
+    "1fr 1fr" 200px
+    "1fr 1fr" 200px
+    "1fr 1fr" 200px
+    "1fr 1fr" 200px
+    "1fr 1fr" 200px
+    "1fr 1fr" 200px;
+  }
+}
+
+/* a:-webkit-any-link{
+  color: -webkit-link;
+  cursor: pointer;
+} */
+
