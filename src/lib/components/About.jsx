@@ -5,14 +5,13 @@ import Image from "../../assets/out.jpg"
 
 export const About = (props) => {
     const [isVisible,setisVisible]=useState(false)
-    const [isVisible1,setisVisible1]=useState(false);
     const sectionRef=useRef(null);
+    const sectionRef1=useRef(null);
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setisVisible(true); // Set isVisible to true when section is in the viewport
-                    setisVisible1(true);
                 }
             },
             { threshold: 0.4 } // Trigger when 10% of the section is visible
@@ -22,9 +21,16 @@ export const About = (props) => {
             observer.observe(sectionRef.current);
         }
 
+        if(sectionRef1.current){
+            observer.observe(sectionRef1.current)
+        }
+
         return () => {
             if (sectionRef.current) {
                 observer.unobserve(sectionRef.current);
+            }
+            if(sectionRef1.current){
+                observer.unobserve(sectionRef1.current)
             }
         };
     }, []);
@@ -67,7 +73,7 @@ export const About = (props) => {
                         Contact us: +91 9007062180
                     </a>
                 </h4>
-                <div className={`${isVisible1 ? "transformation trans4" : "initial"}`}>
+                <div ref={sectionRef1} className={`${isVisible ? "transformation trans4" : "initial"}`}>
                     <a href='https://wa.link/at5ion'>
                         <button className='py-3 px-6 outline-none border-none text-[1rem] font-medium
                         text-white bg-[#e82574] rounded-[5px] cursor-pointer transition-all duration-300
