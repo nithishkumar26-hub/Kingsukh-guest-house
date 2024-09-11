@@ -41,6 +41,7 @@ export const About = (props) => {
             <div>
                 <img src={Image} className={`${isVisible ? "transformation" : "initial initialimg "}
                 max-w-[450px] m-auto rounded-[5px] w-full flex`}/>
+                
             </div>
             <div >
                 <div className={`flex flex-row ${isVisible ? "transformation trans1" : "initial"}`}>
@@ -55,7 +56,7 @@ export const About = (props) => {
                 mb-4 text-[2.5rem] font-semibold leading-[3rem] text-[#0c0a09]`}>
                     The Best Holidays Start Here!</h2>
                 <p className={`${isVisible ? "transformation trans3" : "initial"} max-w-[600px] mb-4 
-                text-[#78716c] text-[1rem] h-[200px]`}>
+                text-[#78716c] text-[1rem]`}>
                     Embark on a tranquil journey at our Kingsukh Guest House, enveloped by the scenic 
                     allure of Biharinath Hill, Baranti Hill, Susunia Hill, Joychandi Hill, Garhpanchkot, 
                     Baranti Dam, Maithon Dam, and the captivating Panchat Dam. Revel in the embrace of comfort,
